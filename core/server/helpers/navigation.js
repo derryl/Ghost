@@ -44,10 +44,16 @@ navigation = function (options) {
     if (navigationData.length === 0) {
         return new hbs.SafeString('');
     }
+    
+    function unslash(s) {
+        return (s && 'string' === typeof s) ? s.replace(/\//g,"") : s;
+    }
 
     output = navigationData.map(function (e) {
         var out = {};
-        out.current = e.url === currentUrl;
+        var curUrl = unslash( currentUrl ),
+            navUrl = unslash( e.url );
+        out.current = ( navUrl === curUrl );
         out.label = e.label;
         out.slug = _slugify(e.label);
         out.url = hbs.handlebars.Utils.escapeExpression(e.url);
