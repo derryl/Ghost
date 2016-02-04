@@ -43,3 +43,9 @@
 @import "layouts/tags.css";
 @import "layouts/error.css";
 @import "layouts/packages.css";
+
+@import "overrides.css";
+
+ol.posts-list li {
+    border: 3px solid red !important;
+}

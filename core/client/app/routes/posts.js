@@ -9,6 +9,7 @@ export default AuthenticatedRoute.extend(ShortcutsRoute, PaginationRouteMixin, {
     paginationModel: 'post',
     paginationSettings: {
         status: 'all',
+        // staticPages: 'none'
         staticPages: 'all'
     },
 
